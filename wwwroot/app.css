@@ -1,0 +1,29 @@
+html, body { font-family: "Georgia", serif !important; background-color: #5d4037 !important; color: #3e2723 !important; margin: 0; }
+.page { background-color: #d7ccc8 !important; min-height: 100vh; }
+main { background-color: #d7ccc8 !important; }
+.bh-nav, .navbar { background: linear-gradient(90deg, #3e2723, #5d4037) !important; box-shadow: 0 4px 0 #6d4c41 !important; }
+.bh-nav .nav-link, .navbar .nav-link, .navbar-brand { color: #fff5e1 !important; }
+.bh-nav .nav-link:hover, .bh-nav .nav-link.active { color: #ffc107 !important; }
+.bh-hero { background: linear-gradient(135deg, #3e2723 0%, #6d4c41 60%, #8d6e63 100%) !important; border: 5px solid #3e2723 !important; box-shadow: 10px 10px 0 #4e342e !important; color: #fff !important; }
+.bh-hero h1, .bh-hero p { color: #fff !important; }
+.bh-footer, footer { background-color: #2e1a14 !important; border-top: 4px solid #8d6e63 !important; color: #d7ccc8 !important; }
+.text-bh { color: #4e342e !important; font-weight: 700; }
+.btn-bh, .btn-primary, .btn-success { background-color: #5d4037 !important; border-color: #5d4037 !important; color: #fff5e1 !important; font-weight: 700; }
+.btn-bh:hover, .btn-primary:hover, .btn-success:hover { background-color: #3e2723 !important; }
+.btn-outline-bh { border: 3px solid #5d4037 !important; color: #5d4037 !important; background: #fff5e1 !important; font-weight: 700; }
+.btn-outline-bh:hover { background-color: #5d4037 !important; color: #fff5e1 !important; }
+.btn-light { background-color: #fff5e1 !important; color: #4e342e !important; font-weight: 700; }
+.text-primary { color: #4e342e !important; }
+.bg-primary { background-color: #5d4037 !important; }
+.bh-sidebar { background-color: #fff5e1 !important; border: 4px solid #5d4037 !important; box-shadow: 6px 6px 0 #3e2723 !important; }
+.bh-sidebar .list-group-item { background: transparent !important; border: 0; padding: 0.7rem 0.8rem; color: #4e342e !important; font-weight: 700; }
+.bh-sidebar .list-group-item:hover { background-color: #d7ccc8 !important; }
+.bh-sidebar .active-bh { background-color: #5d4037 !important; color: #fff5e1 !important; }
+.bh-feature { background-color: #fff5e1 !important; border-left: 8px solid #5d4037 !important; box-shadow: 5px 5px 0 #8d6e63 !important; }
+.bh-book-card, .card { background-color: #fff5e1 !important; border: 3px solid #5d4037 !important; box-shadow: 7px 7px 0 #3e2723 !important; transition: all 0.2s ease; }
+.bh-book-card:hover { transform: translate(-3px, -3px); box-shadow: 10px 10px 0 #3e2723 !important; }
+.navbar-brand { font-style: italic; }
+#blazor-error-ui { background: #ffc107; bottom: 0; box-shadow: 0 -1px 2px rgba(0,0,0,0.2); display: none; left: 0; padding: 0.6rem 1.25rem 0.7rem 1.25rem; position: fixed; width: 100%; z-index: 1000; }
+#blazor-error-ui .dismiss { cursor: pointer; position: absolute; right: 0.75rem; top: 0.5rem; }
+
+

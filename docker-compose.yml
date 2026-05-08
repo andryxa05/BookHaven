@@ -1,0 +1,54 @@
+name: bookhaven
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: bookhaven-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bookhaven
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - bookhaven_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d bookhaven"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - bookhaven-net
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bookhaven-app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=bookhaven;Username=postgres;Password=postgres"
+    ports:
+      - "8004:8080"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    networks:
+      - bookhaven-net
+
+volumes:
+  bookhaven_data:
+    driver: local
+
+networks:
+  bookhaven-net:
+    driver: bridge
